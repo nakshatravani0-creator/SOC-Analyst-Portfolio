@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakshatra Vani | Cybersecurity Portfolio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">CYBER<span>//</span></div>
+
+        <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+</div>
+    </nav>
+
+    <section class="hero">
+
+        <div class="hero-text">
+            <p class="small-text">SOC • NETWORK SECURITY • THREAT ANALYSIS</p>
+
+            <h1>Hi, I'm <span>Nakshatra Vani</span></h1>
+
+            <h2>Aspiring SOC Analyst</h2>
+
+            <p>
+                I am focused on cybersecurity, network security,
+                threat detection and security analysis.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn outline">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="terminal-top">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="terminal">
+                <p>$ whoami</p>
+                <p class="green">nakshatra@security</p>
+
+                <p>$ role</p>
+                <p>SOC Analyst</p>
+
+                <p>$ status</p>
+                <p class="green">● Available</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="about">
+    <h2>About Me</h2>
+
+    <p>
+        I am a BCA graduate with a growing interest in Cybersecurity and
+        Security Operations. I am developing practical skills in networking,
+        network traffic analysis, threat detection, log analysis and security
+        monitoring.
+    </p>
+
+    <p>
+        My goal is to build a career as a SOC Analyst and work on real-world
+        security challenges while continuously improving my technical skills.
+    </p>
+</section>
+
+    <section id="services">
+    <h2>What I Can Help With</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Network Traffic Analysis</h3>
+            <p>
+                Analyze network traffic and identify unusual or suspicious
+                communication patterns.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Security Log Analysis</h3>
+            <p>
+                Review security logs and identify events that may require
+                further investigation.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Basic Security Assessment</h3>
+            <p>
+                Perform basic security checks and analyze potential security
+                issues using cybersecurity tools.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+   <!-- Projects Section -->
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="cards">
+
+        {% for project in projects %}
+
+        <div class="card">
+
+            <h3>{{ project["title"] }}</h3>
+
+            <p>
+                {{ project["description"] }}
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                {{ project["technologies"] }}
+            </p>
+
+            {% if project["github_link"] %}
+
+            <a href="{{ project['github_link'] }}"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                View Project on GitHub →
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        {% else %}
+
+        <div class="card">
+
+            <h3>No Projects Added Yet</h3>
+
+            <p>
+                Projects will appear here soon.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+    <section id="skills">
+    <h2>Technical Skills</h2>
+
+    <p>
+        Technologies and cybersecurity areas I am currently learning
+        and working with.
+    </p>
+
+    <div class="skills">
+        <span>Networking</span>
+        <span>Python</span>
+        <span>Linux</span>
+        <span>Wireshark</span>
+        <span>Nmap</span>
+        <span>Scapy</span>
+        <span>SOC Fundamentals</span>
+        <span>Log Analysis</span>
+        <span>Threat Detection</span>
+        <span>Network Security</span>
+    </div>
+</section>
+   
+    <section id="resume">
+    <h2>Resume</h2>
+
+    <p>
+        Want to know more about my education, skills and cybersecurity
+        experience?
+    </p>
+
+    <a href="/static/resume.pdf" class="btn" target="_blank">
+        View Resume
+    </a>
+</section> 
+
+    <section id="contact">
+    <h2>Let's Connect</h2>
+
+    <p>
+        Interested in cybersecurity, collaboration, internships or
+        discussing a project? Feel free to connect with me.
+    </p>
+
+    <div class="buttons">
+        <a href="mailto:nakshatravani0@gmail.com" class="btn">
+            Email Me
+        </a>
+
+        <a href="https://github.com/nakshatravani0-creator"
+           target="_blank"
+           class="btn outline">
+            GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/nakshatra-vani-a252163a4"
+           target="_blank"
+           class="btn outline">
+            LinkedIn
+        </a>
+    </div>
+</section>
+    <footer>
+        <p>© 2026 Nakshatra Vani | Cybersecurity Portfolio</p>
+    </footer>
+
+</body>
+</html>

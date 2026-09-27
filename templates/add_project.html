@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Project | SECOPS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #08111f;
+            color: #e5eef8;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #9fb0c0;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background: #0d1826;
+            border: 1px solid #1f3448;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: #08111f;
+            color: white;
+            border: 1px solid #1f3448;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #00ff88;
+        }
+
+        button,
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        button {
+            background: #00ff88;
+            color: #04110b;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back {
+            margin-left: 10px;
+            color: #00ff88;
+            border: 1px solid #00ff88;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Add New Project</h1>
+
+        <p class="subtitle">
+            Add a new project to your portfolio.
+        </p>
+
+        <form method="POST">
+
+            <label for="title">Project Name</label>
+
+            <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Example: Network Sniffer"
+                required
+            >
+
+            <label for="description">Project Description</label>
+
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Write your project description"
+                required
+            ></textarea>
+
+            <label for="technologies">Technologies</label>
+
+            <input
+                type="text"
+                id="technologies"
+                name="technologies"
+                placeholder="Python, Scapy, Networking"
+                required
+            >
+
+            <label for="github_link">GitHub Link</label>
+
+            <input
+                type="url"
+                id="github_link"
+                name="github_link"
+                placeholder="https://github.com/your-project"
+            >
+
+            <button type="submit">
+                Add Project
+            </button>
+
+            <a href="/admin/dashboard" class="back">
+                Back
+            </a>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

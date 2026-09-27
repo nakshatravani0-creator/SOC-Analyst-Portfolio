@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | SECOPS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #08111f;
+            color: #e5eef8;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0d1826;
+            border-bottom: 1px solid #1f3448;
+        }
+
+        .logo {
+            color: #00ff88;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Consolas, monospace;
+        }
+
+        .logout {
+            color: #00ff88;
+            text-decoration: none;
+            border: 1px solid #00ff88;
+            padding: 8px 15px;
+            border-radius: 6px;
+        }
+
+        .container {
+            width: 84%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #9fb0c0;
+            margin-bottom: 35px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .dashboard-card {
+            padding: 28px;
+            background: #0d1826;
+            border: 1px solid #1f3448;
+            border-radius: 12px;
+        }
+
+        .dashboard-card h2 {
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-card p {
+            color: #9fb0c0;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #00ff88;
+            color: #04110b;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                gap: 15px;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">SECOPS.</div>
+
+        <a href="/admin/logout" class="logout">
+            Logout
+        </a>
+    </div>
+
+    <div class="container">
+
+        <h1>Welcome to Admin Dashboard</h1>
+
+        <p class="subtitle">
+            Manage your portfolio website from one private place.
+        </p>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+                <h2>Projects</h2>
+
+                <p>
+                    Add, edit and delete your future projects.
+                </p>
+
+                <a href="/admin/projects/add" class="btn">
+                   Add Project
+                </a>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Skills</h2>
+
+                <p>
+                    Update your technical skills and tools.
+                </p>
+
+                <a href="#" class="btn">
+                    Manage Skills
+                </a>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Profile</h2>
+
+                <p>
+                    Update your About Me and resume details.
+                </p>
+
+                <a href="#" class="btn">
+                    Edit Profile
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

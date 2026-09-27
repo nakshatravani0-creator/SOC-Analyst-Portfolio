@@ -1,0 +1,559 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 255, 136, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(0, 180, 255, 0.06),
+            transparent 25%
+        ),
+        #08111f;
+    color: #e5eef8;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    background: rgba(8, 17, 31, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1f3448;
+    z-index: 100;
+}
+
+.logo {
+    font-family: Consolas, monospace;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #00ff88;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #c9d4df;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #00ff88;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 80px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cyber grid */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 255, 136, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 136, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+    pointer-events: none;
+}
+
+.hero-text,
+.hero-card {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+
+/* Small green text */
+
+.small-text {
+    color: #00ff88;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
+
+/* Main heading */
+
+h1 {
+    font-size: 60px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+h1 span {
+    color: #00ff88;
+}
+
+
+/* Hero subtitle */
+
+.hero h2 {
+    color: #aab7c4;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+/* Hero paragraph */
+
+.hero-text > p {
+    color: #9fb0c0;
+    font-size: 18px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #00ff88;
+    color: #04110b;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 25px rgba(0, 255, 136, 0.25);
+}
+
+.btn.outline {
+    background: transparent;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+}
+
+
+/* =========================
+   HERO TAGS
+========================= */
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.hero-tags span {
+    padding: 7px 13px;
+    border: 1px solid #1f3448;
+    border-radius: 20px;
+    background: #0d1826;
+    color: #9fb0c0;
+    font-size: 13px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.hero-tags span:hover {
+    transform: translateY(-3px);
+    border-color: #00ff88;
+    color: #00ff88;
+}
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+.hero-card {
+    width: 380px;
+    background: #0d1826;
+    border: 1px solid #1f3448;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 1px rgba(0, 255, 136, 0.05),
+        0 20px 70px rgba(0, 0, 0, 0.45);
+}
+
+.terminal-top {
+    display: flex;
+    gap: 7px;
+    padding: 12px;
+    background: #101f30;
+}
+
+.terminal-top span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #607080;
+}
+
+.terminal {
+    padding: 25px;
+    font-family: Consolas, monospace;
+    color: #c7d5e3;
+}
+
+.terminal p {
+    margin-bottom: 12px;
+}
+
+.green {
+    color: #00ff88;
+    text-shadow:
+        0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+.status-dot {
+    color: #00ff88;
+    font-size: 12px;
+}
+
+.terminal-cursor {
+    color: #00ff88;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 90px 8%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+section h2 {
+    position: relative;
+    display: inline-block;
+
+    font-size: 36px;
+    line-height: 1.2;
+
+    /* Small space between text and line */
+    padding-bottom: 8px;
+
+    /* Space after complete heading */
+    margin-bottom: 25px;
+}
+
+
+/* Green underline */
+
+section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    background: #00ff88;
+
+    margin-top: 7px;
+
+    box-shadow:
+        0 0 12px rgba(0, 255, 136, 0.6);
+}
+
+
+/* Section paragraphs */
+
+section > p {
+    color: #9fb0c0;
+    max-width: 800px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+
+    background: #0d1826;
+    border: 1px solid #1f3448;
+
+    padding: 25px;
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Green animated line */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 2px;
+
+    background: #00ff88;
+
+    transition: left 0.4s ease;
+}
+
+.card:hover::before {
+    left: 0;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #00ff88;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #9fb0c0;
+}
+
+.card a {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #00ff88;
+    text-decoration: none;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills span {
+    padding: 10px 16px;
+
+    border: 1px solid #1f3448;
+    background: #0d1826;
+
+    border-radius: 30px;
+
+    color: #c9d4df;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.skills span:hover {
+    transform: translateY(-3px);
+    border-color: #00ff88;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    margin: 0 auto 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    border-top: 1px solid #1f3448;
+
+    color: #7f91a3;
+}
+
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection {
+    background: #00ff88;
+    color: #08111f;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-tags {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+}
+/* Reduce gap between heading and paragraph */
+section h2 {
+    margin-bottom: 10px;
+}
+
+section h2::after {
+    margin-top: 5px;
+}
+section h2 {
+    margin-bottom: 5px;
+}
+/* Move paragraph slightly upward */
+#skills > p,
+#resume > p {
+    position: relative;
+    top: -5px;
+}
