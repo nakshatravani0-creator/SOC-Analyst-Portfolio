@@ -3,7 +3,24 @@ import sqlite3
 import os
 
 app = Flask(__name__)
+def init_db():
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
 
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS projects (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        description TEXT NOT NULL,
+        technologies TEXT NOT NULL,
+        github_link TEXT
+    )
+    """)
+
+    connection.commit()
+    connection.close()
+
+init_db()
 app.secret_key = os.environ.get("SECRET_KEY")
 
 
